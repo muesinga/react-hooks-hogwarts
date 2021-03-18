@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PigCard from "./PigCard"
 
 
@@ -15,6 +15,11 @@ function PigContainer({pigs}) {
      weight={pig.weight}
      medal={pig['highest medal achieved']} />
      });
+    function GreasedPigs({pigs}) {
+      const [greased, setGreased] = useState(false);
+
+      const
+    }
     return (
       <div>
         <h2>Pigs</h2>
