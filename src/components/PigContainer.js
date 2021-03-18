@@ -5,7 +5,9 @@ import PigCard from "./PigCard"
 
 function PigContainer({pigs}) {
      const pigCard = pigs.map((pig) => {
-     return <PigCard key={pig.id} 
+     return <PigCard 
+     pigs={pigs}
+     key={pig.id} 
      id={pig.id} 
      name={pig.name} 
      specialty={pig.specialty} 

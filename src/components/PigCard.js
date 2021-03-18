@@ -29,11 +29,17 @@ const images = {
     "Truffle Shuffle": truffle_shuffle
 };
 
-function PigCard({name, specialty, greased, weight, medal}) {
+function PigCard({ name, specialty, greased, weight, medal}) {
     const [showDetails, setShowDetails] = useState(true)
-    function pigDetails({
-        return <Details name={name} specialty={specialty} greased={greased} weight={weight} medal={medal} />
-    })
+    function pigDetails() { 
+        console.log( <div>
+    <h3>{name}</h3>
+    <h4>{specialty}</h4>
+    <h4>{greased}</h4>
+    <h4>{weight}</h4>
+    <h4>{medal}</h4>
+    </div>)}
+    
     function handleShowDetails() {
         setShowDetails(!showDetails);
         console.log(showDetails)
@@ -44,8 +50,9 @@ function PigCard({name, specialty, greased, weight, medal}) {
         <div>
         <h1>{name}</h1>
         <img src={images[name]} alt={name} />
-        <button onClick={handleShowDetails}> Show Details</button>
+        <button className="showDetails" onClick={handleShowDetails}> {showDetails ? "Show" : "Hide"} Details</button>
         {handleShowDetails ? null : pigDetails}
+       
         </div>
     )
 }
