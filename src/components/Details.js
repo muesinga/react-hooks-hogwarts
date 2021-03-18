@@ -1,5 +1,5 @@
 import React from "react";
-// import hogs from "../porkers_data";
+
 
 function Details ({name, specialty, greased, weight, medal}) {
     return (
@@ -11,5 +11,4 @@ function Details ({name, specialty, greased, weight, medal}) {
     <h4>{medal}</h4>
     </div>
     )}
-    // {name, specialty, greased, weight, medal}
 export default Details;
