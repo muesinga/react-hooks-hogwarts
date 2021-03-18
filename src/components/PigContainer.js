@@ -31,24 +31,23 @@ const images = {
 
 
 function PigContainer({pigs}) {
-       
-
-
-   const PigArray = pigs.map((pig)=>{
-     return (
-      <h1> 
-      {pig.name} 
-      </h1>
-     )
-   })
+     const pigCard = pigs.map((pig) => {
+     return <PigCard key={pig.id} 
+     id={pig.id} 
+     name={pig.name} 
+     specialty={pig.specialty} 
+     greased={pig.greased}
+     weight={pig.weight}
+     medal={pig['highest medal achieved']} />
+     });
+    return (
+      <div>
+        <h2>Pigs</h2>
+        <p>{pigCard}</p>
+        <img src={images[pigCard.name]} alt={pigCard.name} />
+      </div>
+    );
   }
-  //   return (
-  //     <div>
-  //       <h2>Test</h2>
-  //       <img src={piggy_smalls} alt={name} />
-  //     </div>
-  //   );
-  // }
 
 // function PigContainer({ name, specialty, greased, weight, medal }) {
 //     return (
