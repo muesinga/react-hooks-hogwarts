@@ -31,15 +31,9 @@ const images = {
 
 function PigCard({ name, specialty, greased, weight, medal}) {
     const [showDetails, setShowDetails] = useState(true)
-    function pigDetails() { 
-        console.log( <div>
-    <h3>{name}</h3>
-    <h4>{specialty}</h4>
-    <h4>{greased}</h4>
-    <h4>{weight}</h4>
-    <h4>{medal}</h4>
-    </div>)}
-    
+    const pigDetails = (() => {
+        return <Details name={name} specialty={specialty} greased={greased} weight={weight} medal={medal} />
+    })
     function handleShowDetails() {
         setShowDetails(!showDetails);
         console.log(showDetails)
@@ -52,7 +46,6 @@ function PigCard({ name, specialty, greased, weight, medal}) {
         <img src={images[name]} alt={name} />
         <button className="showDetails" onClick={handleShowDetails}> {showDetails ? "Show" : "Hide"} Details</button>
         {handleShowDetails ? null : pigDetails}
-       
         </div>
     )
 }
