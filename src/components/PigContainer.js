@@ -30,14 +30,25 @@ const images = {
 };
 
 
-function PigContainer({ name, specialty, greased, weight, medal }) {
-    return (
-      <div>
-        <h2>Test</h2>
-        <img src={piggy_smalls} alt={name} />
-      </div>
-    );
+function PigContainer({pigs}) {
+       
+
+
+   const PigArray = pigs.map((pig)=>{
+     return (
+      <h1> 
+      {pig.name} 
+      </h1>
+     )
+   })
   }
+  //   return (
+  //     <div>
+  //       <h2>Test</h2>
+  //       <img src={piggy_smalls} alt={name} />
+  //     </div>
+  //   );
+  // }
 
 // function PigContainer({ name, specialty, greased, weight, medal }) {
 //     return (
